@@ -56,29 +56,29 @@
         </ul>
       </div>
     </div>
-    <section class="hero-section">
-      <div class="container hero-content">
-        <!-- Search form -->
-        <div class="search-container">
-          <form id="searchForm" class="search-pill-wrapper" role="search">
-            <input 
-              type="text" 
-              id="searchInput" 
-              class="search-input" 
-              placeholder="Search recipes here ..." 
-              autocomplete="off"
-              required
-            >
-            <button type="submit" class="btn-search-circle" aria-label="Search">
-              <i class="bi bi-search"></i>
-            </button>
-          </form>
-        </div>
+   <section class="hero">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search recipes here ..." />
+      <button id="searchBtn">&#128269;</button>
+    </div>
+    <h2>What are your favorite cuisines?</h2>
+    <p class="sub-heading">PERSONALIZE YOUR EXPERIENCE</p>
+  </section>
 
-        <h1 class="hero-title">What are your favorite cuisines?</h1>
-        <p class="hero-subtitle">PERSONALIZE YOUR EXPERIENCE</p>
-      </div>
+  <main>
+    <!-- shows up only after a search -->
+    <section class="section" id="mealsSection" hidden>
+      <h2 class="section-title">Meals</h2>
+      <p id="noResultMsg" class="no-result" hidden>No food found</p>
+      <div class="grid" id="mealsGrid"></div>
     </section>
+
+    <section class="section alt">
+      <h2 class="section-title">CATEGORIES</h2>
+      <div class="grid" id="categoriesGrid"></div>
+    </section>
+  </main>
+
     <script src="JS/script.js"></script>
      
     <!-- Bootstrap JS -->

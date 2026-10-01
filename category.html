@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meal Finder - Category</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <h1>🏠 MEAL FINDER</h1>
+    </a>
+    <button class="hamburger-btn" id="hamburgerBtn">&#9776;</button>
+  </header>
+
+  <nav class="side-menu" id="sideMenu">
+    <button class="close-btn" id="closeMenuBtn">&times;</button>
+    <ul id="menuList"></ul>
+  </nav>
+  <div class="overlay" id="overlay"></div>
+
+  <section class="hero">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search recipes here ..." />
+      <button id="searchBtn">&#128269;</button>
+    </div>
+    <h2>What are your favorite cuisines?</h2>
+    <p class="sub-heading">PERSONALIZE YOUR EXPERIENCE</p>
+  </section>
+
+  <main>
+    <section class="category-info" id="categoryInfo">
+      <!-- filled by js/category.js -->
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Meals</h2>
+      <p id="noResultMsg" class="no-result" hidden>No food found</p>
+      <div class="grid" id="mealsGrid"></div>
+    </section>
+  </main>
+
+  <script src="scripts/common.js"></script>
+  <script src="scripts/category.js"></script>
+  
+</body>
+</html>
