@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meal Finder - Details</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <h1>🏠 MEAL FINDER</h1>
+    </a>
+    <button class="hamburger-btn" id="hamburgerBtn">&#9776;</button>
+  </header>
+
+  <nav class="side-menu" id="sideMenu">
+    <button class="close-btn" id="closeMenuBtn">&times;</button>
+    <ul id="menuList"></ul>
+  </nav>
+  <div class="overlay" id="overlay"></div>
+
+  <section class="hero">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search recipes here ..." />
+      <button id="searchBtn">&#128269;</button>
+    </div>
+    <h2>What are your favorite cuisines?</h2>
+    <p class="sub-heading">PERSONALIZE YOUR EXPERIENCE</p>
+  </section>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="index.html">&#127968;</a> &raquo; <span id="crumbName"></span>
+    </div>
+
+    <h2 class="section-title indent">Meal Details</h2>
+
+    <section class="meal-card" id="mealCard">
+      <div class="meal-card-topbar">
+        <span>🏠 MEAL FINDER</span>
+        <span class="menu-dots">&#9776;</span>
+      </div>
+
+      <div class="meal-card-body">
+        <img id="mealImg" src="" alt="" />
+
+        <div class="meal-info">
+          <h2 id="mealTitle"></h2>
+          <p><strong>CATEGORY:</strong> <span id="mealCategory"></span></p>
+          <p><strong>Source:</strong> <a id="mealSource" href="#" target="_blank" rel="noopener"></a></p>
+
+          <div class="tags" id="mealTags"></div>
+
+          <div class="ingredients-box">
+            <h3>Ingredients</h3>
+            <ol class="ingredients-list" id="ingredientsList"></ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="measures">
+        <h3>Measure:</h3>
+        <div class="measure-grid" id="measuresGrid"></div>
+      </div>
+      
+
+      <div class="instructions">
+        <h3>Instructions:</h3>
+        <ul id="instructionsList"></ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">CATEGORIES</h2>
+      <div class="grid" id="categoriesGrid"></div>
+    </section>
+  </main>
+
+  <script src="scripts/common.js"></script>
+  <script src="scripts/meal.js"></script>
+</body>
+</html>
