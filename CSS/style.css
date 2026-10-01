@@ -115,36 +115,59 @@ z-index: 1000;
 display: block;
 }
 /* ================================
-   HAMBURGER BUTTON
+   HERO
 ================================ */
-
-.navbar-toggler {
-    border: 2px solid white;
-    padding: 7px 10px;
-    border-radius: 6px;
-    background-color: transparent;
+.hero {
+    background-image: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+    url("../Assests/hero-bg.jpg.jpeg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
 }
 
-.navbar-toggler:hover {
-    background-color: rgba(255, 255, 255, 0.15);
+.search-box {
+  display: flex;
+  margin-bottom: 30px;
+  align-items: center;
 }
 
-.navbar-toggler:focus {
-    box-shadow: none;
+.search-box input {
+  width:310px;
+  height: 55px;
+  padding: 0 30px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  outline: none;
 }
 
-
-/* Bootstrap hamburger icon */
-
-.navbar-toggler-icon {
-    background-image: none;
-    width: 25px;
-    height: 20px;
-    position: relative;
-    display: block;
+.search-box button {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: #ed5b16;
+  color: #fff;
+  font-size: 22px;
+  margin-left: -5px;
+  cursor: pointer;
 }
 
-/* Create hamburger lines */
+.hero h2 {
+  font-size: 34px;
+  margin-bottom: 25px;
+}
+
+.sub-heading {
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+/*-------- MAIN--------- */
 
 .navbar-toggler-icon::before,
 .navbar-toggler-icon::after,
