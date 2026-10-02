@@ -18,10 +18,18 @@ a {
   text-decoration: none;
   color: inherit;
 }
+ul {
+  list-style: none;
+}
 
-/* ================================
-   NAVBAR
-================================ */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+   /*-------- NAVBAR--------- */
+
 
 .navbar {
   height: 60px;
@@ -55,18 +63,19 @@ a {
 .side-menu {
   position: fixed;
   top: 0;
-  right: -300;
-  height: 100vh;
+  right: 0;
+  height: 100%;
   width: 300px;
   background: #fff;
   box-shadow: -3px 0 10px rgba(0, 0, 0, 0.15);
   transition: 0.3s;
-  z-index: 2000;
+  z-index: 40;
   padding: 20px;
+  overflow-y: auto;
 }
 
 .side-menu.open {
-  right: 0;
+transform: translateX(0);
 }
 
 .close-btn {
@@ -80,7 +89,7 @@ a {
 }
 
 .side-menu ul {
-  list-style: none;
+  clear: both;
   padding: 10px 0;
 }
 
@@ -91,6 +100,7 @@ a {
 .side-menu li a {
   display: block;
   padding: 12px 5px;
+  border-bottom: 1px solid #eee;
   color: #555;
   font-size: 15px;
 }
@@ -106,18 +116,19 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: none;
-  z-index: 1500;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 30;
+   pointer-events: none;
 }
 
 .overlay.show {
-  display: block;
+ opacity: 1;
+  pointer-events: auto;
 }
 
-/* ================================
-   HERO
-================================ */
+
+   /*--------- HERO--------- */
+
 .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.45)),
     url("../Assests/hero-bg.jpg.jpeg");
@@ -307,12 +318,15 @@ main {
 .meal-card-body > img {
     width: 100%;
     max-height: 500px;
+    border-radius: 4px;
     object-fit: cover;
 }
 
 .meal-info h2 {
     color: #ed5b16;
     font-size: 24px;
+     border-bottom: 2px solid #e2691f;
+  padding-bottom: 10px;
     margin-bottom: 20px;
 }
 
@@ -325,3 +339,124 @@ main {
     color: #555;
 }
 
+   /*-------- TAGS-------- */
+.tags {
+    margin: 20px 0;
+}
+
+.tags span {
+    display: inline-block;
+    border: 1px solid #ed5b16;
+    color: #ed5b16;
+    padding: 4px 8px;
+    margin-right: 5px;
+    font-size: 12px;
+}
+   /*-------- INGREDIENTS-------- */
+   .ingredients-box {
+    background: #ed5b16;
+    color: white;
+    padding: 20px;
+    margin-top: 25px;
+}
+
+.ingredients-box h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.ingredients-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding-left: 20px;
+}
+
+.ingredients-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+    font-size: 12px;
+}
+
+.num {
+    background: white;
+    color: #ed5b16;
+    width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+  flex-shrink: 0;
+    border-radius: 50%;
+    padding: 2px 5px;
+    /* margin-right: 3px; */
+}
+
+   /*-------- MEASURES-------- */
+   .measures {
+    margin-top: 40px;
+}
+
+.measures h3,
+.instructions h3 {
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.measure-grid {
+    border: 1px solid #ddd;
+     border-radius: 4px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+.measure-grid span {
+    color: #444;
+    font-size: 13px;
+}
+
+.measure-grid span::before {
+    content: "🔗";
+    color: #ed5b16;
+    margin-right: 8px;
+}
+
+ /*--------- INSTRUCTIONS-------- */
+ .instructions {
+    margin-top: 30px;
+    padding: 0 28px 28px;
+}
+
+.instructions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.instructions li {
+    margin-bottom: 15px;
+    padding-left: 25px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.instructions li::before {
+    content: "☑️";
+    color: #ed5b16;
+    margin-left: -25px;
+    margin-right: 10px;
+}
+
+ /*--------- CATEGORIES BELOW MEAL DETAILS--------- */
+ 
+#categoriesGrid .card h3 {
+    position: static;
+    background: white;
+    color: black;
+    padding: 8px 5px;
+    text-align: left;
+    font-size: 18px;
+}
