@@ -172,6 +172,36 @@ display: block;
   font-size: 16px;
 }
 /*-------- MAIN--------- */
+main{
+  padding: 60px 20px;
+}
 
+.section{
+  margin-bottom: 70px;
+}
 
-   
+.section-title{
+  font-size: 26px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 35px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+  .section-title::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 65px;
+    height: 3px;
+    background: #ed5b16;
+  }
+
+  /*-------- GRID------- */
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+  }
