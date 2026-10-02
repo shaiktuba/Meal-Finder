@@ -326,15 +326,15 @@ main {
 
 .category-info p {
   color: #666;
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 20px;
+  margin-bottom: 12px;
 }
 
 /*--------- NO RESULT-------- */
 .no-result {
   color: #ed5b16;
-  font-size: 18px;
-  margin-bottom: 20px;
+  font-size: 14px;
+ line-height: 1.7;
 }
 
 /*--------- BREADCRUMB--------- */
@@ -491,10 +491,10 @@ main {
 }
 
 .measure-grid span::before {
-  /* content: "🔗";
+  content: "🔗";
   color: #ed5b16;
-  margin-right: 8px; */
-    content: "\1F527  ";
+  margin-right: 8px;
+  
 }
 
 /*--------- INSTRUCTIONS-------- */
@@ -522,14 +522,10 @@ main {
 }
 
 .instructions li::before {
-   content: "";
-  position: absolute;
-  left: 0;
-  top: 2px;
-  width: 16px;
-  height: 16px;
-  border: 2px solid #e2691f;
-  border-radius: 3px;
+    content: "☑️";
+    color: #ed5b16;
+    margin-left: -25px;
+    margin-right: 10px;
 }
 /*--------- CATEGORIES BELOW MEAL DETAILS--------- */
 
@@ -540,4 +536,230 @@ main {
   padding: 8px 5px;
   text-align: left;
   font-size: 18px;
+}
+/* =========================
+   CATEGORY SECTION
+========================= */
+
+.category-info {
+    margin: 30px 24px;
+    padding: 24px;
+    background: #fdf6f1;
+    border: 1px solid #f0d9c8;
+    border-radius: 6px;
+}
+
+.category-info h2 {
+    color: #ed5b16;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.category-info p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   CATEGORY GRID
+========================= */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 34px;
+    margin: 30px 24px;
+}
+
+
+/* =========================
+   CATEGORY CARD
+========================= */
+
+.category-card {
+    position: relative;
+    height: 215px;
+    background: #ffffff;
+    border-radius: 5px;
+    overflow: hidden;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s ease;
+}
+
+
+/* =========================
+   CATEGORY IMAGE
+========================= */
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* =========================
+   CATEGORY NAME
+========================= */
+
+.category-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    background-color: #e16120;
+    color: #ffffff;
+
+    padding: 6px 12px;
+
+    border-radius: 4px;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.category-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 992px) {
+
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+
+   /*-------- RESPONSIVE-------- */
+
+@media (max-width: 1000px) {
+
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .meal-card-body {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar {
+        height: 55px;
+        padding: 0 15px;
+    }
+
+    .logo h1 {
+        font-size: 18px;
+    }
+
+    .hamburger-btn {
+        font-size: 24px;
+    }
+
+    .hero {
+        height: 330px;
+    }
+
+    .search-box input {
+        width: 230px;
+        height: 48px;
+    }
+
+    .search-box button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .sub-heading {
+        font-size: 12px;
+    }
+
+    main {
+        padding: 35px 12px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .grid .card img {
+        height: 150px;
+    }
+
+    .grid .card h3 {
+        font-size: 15px;
+    }
+
+    .meal-card {
+        padding: 15px;
+    }
+
+    .ingredients-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .grid .card img {
+        height: 220px;
+    }
+
+    .search-box input {
+        width: 200px;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+    }
+
+    .side-menu {
+        width: 270px;
+    }
+
+    .ingredients-list {
+        grid-template-columns: 1fr;
+    }
+
+    .measure-grid {
+        grid-template-columns: 1fr;
+    }
 }
