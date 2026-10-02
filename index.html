@@ -7,23 +7,17 @@
   <link rel="stylesheet" href="CSS/style.css" />
 </head>
 <body>
-
-  <!-- ===== NAVBAR ===== -->
   <header class="navbar">
     <a href="index.html" class="logo">
       <h1>🏠 MEAL FINDER</h1>
-    </a>
+    </a> 
     <button class="hamburger-btn" id="hamburgerBtn">&#9776;</button>
   </header>
-
-  <!-- side menu is filled from the categories API, see js/common.js -->
   <nav class="side-menu" id="sideMenu">
     <button class="close-btn" id="closeMenuBtn">&times;</button>
     <ul id="menuList"></ul>
   </nav>
   <div class="overlay" id="overlay"></div>
-
-  <!-- ===== HERO / SEARCH ===== -->
   <section class="hero">
     <div class="search-box">
       <input type="text" id="searchInput" placeholder="Search recipes here ..." />
@@ -32,9 +26,8 @@
     <h2>What are your favorite cuisines?</h2>
     <p class="sub-heading">PERSONALIZE YOUR EXPERIENCE</p>
   </section>
-
   <main>
-    <!-- shows up only after a search -->
+     <!-- shows up only after a search -->
     <section class="section" id="mealsSection" hidden>
       <h2 class="section-title">Meals</h2>
       <p id="noResultMsg" class="no-result" hidden>No food found</p>
@@ -51,3 +44,4 @@
   <script src="JS/home.js"></script>
 </body>
 </html>
+
