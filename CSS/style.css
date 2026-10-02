@@ -18,6 +18,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
 ul {
   list-style: none;
 }
@@ -28,7 +29,7 @@ img {
 }
 
 
-   /*-------- NAVBAR--------- */
+/*-------- NAVBAR--------- */
 
 
 .navbar {
@@ -68,34 +69,32 @@ img {
   width: 300px;
   background: #fff;
   box-shadow: -3px 0 10px rgba(0, 0, 0, 0.15);
-  transition: 0.3s;
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
   z-index: 40;
   padding: 20px;
   overflow-y: auto;
 }
 
 .side-menu.open {
-transform: translateX(0);
+  transform: translateX(0);
 }
 
-.close-btn {
-  display: block;
-  margin-left: auto;
-  background-color: none;
+.side-menu .close-btn {
+  background: none;
   border: none;
-  color: #ed5b16;
-  font-size: 32px;
+  font-size: 1.6rem;
+  color: #e2691f;
   cursor: pointer;
+  float: right;
+  margin-bottom: 12px;
 }
 
 .side-menu ul {
   clear: both;
-  padding: 10px 0;
+  padding-top: 10px;
 }
 
-.side-menu li {
-  border-bottom: 1px solid #eee;
-}
 
 .side-menu li a {
   display: block;
@@ -112,28 +111,27 @@ transform: translateX(0);
 
 .overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
   z-index: 30;
-   pointer-events: none;
 }
 
 .overlay.show {
- opacity: 1;
+  opacity: 1;
   pointer-events: auto;
 }
 
 
-   /*--------- HERO--------- */
+/*--------- HERO--------- */
 
 .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.45)),
     url("../Assests/hero-bg.jpg.jpeg");
   width: 100%;
-  height: 60vh;
+  height: 40vh;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -182,6 +180,7 @@ transform: translateX(0);
 .sub-heading {
   letter-spacing: 1px;
   font-size: 16px;
+  opacity: 0.9;
 }
 
 /*-------- MAIN--------- */
@@ -190,53 +189,74 @@ main {
 }
 
 .section {
-  margin-bottom: 70px;
+  padding: 40px 24px;
+  /* margin-bottom: 70px; */
+}
+
+.section.alt {
+  background: #f5f5f5;
 }
 
 .section-title {
   font-size: 26px;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  margin-bottom: 35px;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 22px;
   position: relative;
-  padding-bottom: 12px;
 }
 
 .section-title::after {
   content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 65px;
+  display: block;
+  width: 40px;
   height: 3px;
-  background: #ed5b16;
+  background: #e2691f;
+  margin-top: 6px;
+}
+
+.section-title.indent {
+  margin: 24px 0 0 24px;
 }
 
 /*-------- GRID------- */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
+  gap: 22px;
 }
+
+.no-result {
+  color: #777;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
 
 /* CATEGORY CARD NAME AT BOTTOM LEFT  */
 .grid .card {
   background: white;
   border: 1px solid #eee;
+  border-radius: 6px;
+  overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   overflow: hidden;
+  transition: transform 0.15s ease;
+}
+
+.card-img-wrap {
   position: relative;
 }
 
 .grid .card img {
   width: 100%;
-  height: 220px;
-  object-fit: contain;
+  height: 170px;
+  object-fit: cover;
   display: block;
 }
+
 /* CATEGORY NAME */
 
-.grid .card h3 {
+/* .grid .card h3 {
     background: white;
     color: #111;
     font-size: 20px;
@@ -244,145 +264,194 @@ main {
     padding: 8px 5px;
     margin: 0;
     text-align: left;
+} */
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #e2691f;
+  color: #fff;
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 4px;
 }
 
- /*------ MEAL CARDS------ */
- .card-body {
-    padding: 10px;
-    background: white;
+.badge.light {
+  background: #fff;
+  color: #e2691f;
+  left: 10px;
+  right: auto;
 }
 
-.cate-name {
+/*------ MEAL CARDS------ */
+.card-body {
+  padding: 10px;
+  background: white;
+}
+
+.card-body .area {
+  color: #888;
+  font-size: 0.8rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.card-body .title {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+/* .cate-name {
     font-size: 14px;
     color: #222;
     margin: 0;
-}
+} */
 
- /*-------- CATEGORY INFORMATION-------- */
- .category-info {
-    background: white;
-    border: 1px solid #ed5b16;
-    padding: 20px;
-    margin-bottom: 50px;
+/*-------- CATEGORY INFORMATION-------- */
+.category-info {
+  margin: 30px 24px;
+  padding: 24px;
+  background: #fdf6f1;
+  border: 1px solid #f0d9c8;
+  border-radius: 6px;
 }
 
 .category-info h2 {
-    color: #ed5b16;
-    font-size: 20px;
-    margin-bottom: 12px;
+  color: #ed5b16;
+  font-size: 20px;
+  margin-bottom: 12px;
 }
+
 .category-info p {
-    color: #666;
-    font-size: 14px;
-    line-height: 1.7;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.7;
 }
 
-  /*--------- NO RESULT-------- */
-  .no-result {
-    color: #ed5b16;
-    font-size: 18px;
-    margin-bottom: 20px;
+/*--------- NO RESULT-------- */
+.no-result {
+  color: #ed5b16;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
- /*--------- BREADCRUMB--------- */
- .breadcrumb {
-    background: #ed5b16;
-    color: white;
-    padding: 14px 20px;
-    margin-bottom: 30px;
-    font-size: 14px;
+/*--------- BREADCRUMB--------- */
+.breadcrumb {
+  background: #ed5b16;
+  color: white;
+  padding: 16px 24px;
+  margin: 0 24px;
+  font-size: 14px;
+  border-radius: 4px;
 }
 
 .breadcrumb a {
-    color: white;
+  color: white;
 }
 
- /*--------- MEAL DETAILS--------- */
- .meal-card {
-    background: white;
-    padding: 30px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 70px;
+/*--------- MEAL DETAILS--------- */
+.meal-card {
+  margin: 24px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
 .meal-card-topbar {
-    display: none;
+  background: #e2691f;
+  color: #fff;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
 }
 
 .meal-card-body {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 28px;
 }
 
-.meal-card-body > img {
-    width: 100%;
-    max-height: 500px;
-    border-radius: 4px;
-    object-fit: cover;
+.meal-card-body>img {
+  width: 100%;
+  border-radius: 4px;
+  object-fit: cover;
 }
 
 .meal-info h2 {
-    color: #ed5b16;
-    font-size: 24px;
-     border-bottom: 2px solid #e2691f;
+  color: #ed5b16;
+  font-size: 24px;
+  border-bottom: 2px solid #e2691f;
   padding-bottom: 10px;
-    margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .meal-info p {
-    margin-bottom: 15px;
-    font-size: 14px;
+  margin-bottom: 15px;
+  font-size: 14px;
 }
 
 .meal-info a {
-    color: #555;
+  color: #555;
 }
 
-   /*-------- TAGS-------- */
+.meal-info #mealSource {
+  word-break: break-all;
+  color: #2266cc;
+}
+
+/*-------- TAGS-------- */
 .tags {
-    margin: 20px 0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 10px 0 18px;
 }
 
 .tags span {
-    display: inline-block;
-    border: 1px solid #ed5b16;
-    color: #ed5b16;
-    padding: 4px 8px;
-    margin-right: 5px;
-    font-size: 12px;
+  display: inline-block;
+  border: 1px solid #ed5b16;
+  color: #ed5b16;
+  padding: 3px 12px;
+ border-radius: 14px;
+  font-size: 12px;
 }
-   /*-------- INGREDIENTS-------- */
-   .ingredients-box {
-    background: #ed5b16;
-    color: white;
-    padding: 20px;
-    margin-top: 25px;
+
+/*-------- INGREDIENTS-------- */
+.ingredients-box {
+  background: #ed5b16;
+  color: white;
+  padding:18px 20px;
+ border-radius: 6px;
 }
 
 .ingredients-box h3 {
-    font-size: 16px;
-    margin-bottom: 15px;
+  font-size: 16px;
+  margin-bottom: 12px;
 }
 
 .ingredients-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    padding-left: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 16px;
+  list-style: none;
 }
 
 .ingredients-list li {
   display: flex;
   align-items: center;
   gap: 8px;
-    font-size: 12px;
+  font-size: 12px;
 }
 
 .num {
-    background: white;
-    color: #ed5b16;
-    width: 20px;
+  background: white;
+  color: #ed5b16;
+  width: 20px;
   height: 20px;
   display: inline-flex;
   align-items: center;
@@ -390,73 +459,85 @@ main {
   font-size: 0.7rem;
   font-weight: bold;
   flex-shrink: 0;
-    border-radius: 50%;
-    padding: 2px 5px;
-    /* margin-right: 3px; */
+  border-radius: 50%;
+  padding: 2px 5px;
+  border-radius: 50%;
+  /* margin-right: 3px; */
 }
 
-   /*-------- MEASURES-------- */
-   .measures {
-    margin-top: 40px;
+/*-------- MEASURES-------- */
+.measures {
+  margin-top: 40px;
 }
 
 .measures h3,
 .instructions h3 {
-    font-size: 15px;
-    margin-bottom: 15px;
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 
 .measure-grid {
-    border: 1px solid #ddd;
-     border-radius: 4px;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+ display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 40px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 16px 20px;
 }
+
 .measure-grid span {
-    color: #444;
-    font-size: 13px;
+  color: #444;
+  font-size: 13px;
 }
 
 .measure-grid span::before {
-    content: "🔗";
-    color: #ed5b16;
-    margin-right: 8px;
+  /* content: "🔗";
+  color: #ed5b16;
+  margin-right: 8px; */
+    content: "\1F527  ";
 }
 
- /*--------- INSTRUCTIONS-------- */
- .instructions {
-    margin-top: 30px;
-    padding: 0 28px 28px;
+/*--------- INSTRUCTIONS-------- */
+.instructions {
+  margin-top: 30px;
+  padding: 0 28px 28px;
+}
+
+.instructions h3 {
+  margin-bottom: 12px;
 }
 
 .instructions ul {
-    list-style: none;
-    padding: 0;
+   display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .instructions li {
-    margin-bottom: 15px;
-    padding-left: 25px;
-    font-size: 14px;
-    line-height: 1.6;
+   position: relative;
+  padding-left: 28px;
+  line-height: 1.5;
+  color: #333;
+  font-size: 0.95rem;
 }
 
 .instructions li::before {
-    content: "☑️";
-    color: #ed5b16;
-    margin-left: -25px;
-    margin-right: 10px;
+   content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #e2691f;
+  border-radius: 3px;
 }
+/*--------- CATEGORIES BELOW MEAL DETAILS--------- */
 
- /*--------- CATEGORIES BELOW MEAL DETAILS--------- */
- 
 #categoriesGrid .card h3 {
-    position: static;
-    background: white;
-    color: black;
-    padding: 8px 5px;
-    text-align: left;
-    font-size: 18px;
+  position: static;
+  background: white;
+  color: black;
+  padding: 8px 5px;
+  text-align: left;
+  font-size: 18px;
 }
