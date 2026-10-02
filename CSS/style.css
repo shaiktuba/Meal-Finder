@@ -3,15 +3,15 @@
 ================================ */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial,sans-serif;
-    background-color: #f5f5f5;
-  color:#222;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #222;
 }
 
 a {
@@ -24,29 +24,29 @@ a {
 ================================ */
 
 .navbar {
-height: 60px;
-background: #ed5b16;
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding: 0 25px;
-position: relative;
-z-index: 1000;
+  height: 60px;
+  background: #ed5b16;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+  position: relative;
+  z-index: 1000;
 }
 
-.logo{
-    color: white;
+.logo {
+  color: white;
 }
 
-.logo h1{
-    font-size: 24px;
-    margin: 0;
+.logo h1 {
+  font-size: 24px;
+  margin: 0;
 }
 
 .hamburger-btn {
   background: none;
   border: none;
-  font-size:28px;
+  font-size: 28px;
   cursor: pointer;
   color: white;
 }
@@ -55,7 +55,7 @@ z-index: 1000;
 .side-menu {
   position: fixed;
   top: 0;
-  right:-300;
+  right: -300;
   height: 100vh;
   width: 300px;
   background: #fff;
@@ -69,23 +69,23 @@ z-index: 1000;
   right: 0;
 }
 
-.close-btn{
-    display: block;
-    margin-left: auto;
-    background-color: none;
-    border: none;
-    color: #ed5b16;
-    font-size: 32px;
-    cursor: pointer;
+.close-btn {
+  display: block;
+  margin-left: auto;
+  background-color: none;
+  border: none;
+  color: #ed5b16;
+  font-size: 32px;
+  cursor: pointer;
 }
 
-.side-menu ul{
-    list-style: none;
-    padding: 10px 0;
+.side-menu ul {
+  list-style: none;
+  padding: 10px 0;
 }
 
-.side-menu li{
-    border-bottom: 1px solid #eee;
+.side-menu li {
+  border-bottom: 1px solid #eee;
 }
 
 .side-menu li a {
@@ -102,34 +102,35 @@ z-index: 1000;
 
 .overlay {
   position: fixed;
-  top:0;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
- display: none;
+  display: none;
   z-index: 1500;
 }
 
 .overlay.show {
-display: block;
+  display: block;
 }
+
 /* ================================
    HERO
 ================================ */
 .hero {
-    background-image: linear-gradient(rgba(0,0,0,0.45)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45)),
     url("../Assests/hero-bg.jpg.jpeg");
-    width: 100%;
-    height: 60vh;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
+  width: 100%;
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
 }
 
 .search-box {
@@ -141,7 +142,7 @@ display: block;
 }
 
 .search-box input {
-  width:350px;
+  width: 350px;
   height: 55px;
   padding: 0 30px;
   border-radius: 30px;
@@ -171,16 +172,17 @@ display: block;
   letter-spacing: 1px;
   font-size: 16px;
 }
+
 /*-------- MAIN--------- */
-main{
+main {
   padding: 60px 20px;
 }
 
-.section{
+.section {
   margin-bottom: 70px;
 }
 
-.section-title{
+.section-title {
   font-size: 26px;
   text-transform: uppercase;
   letter-spacing: 4px;
@@ -189,19 +191,59 @@ main{
   padding-bottom: 12px;
 }
 
-  .section-title::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 65px;
-    height: 3px;
-    background: #ed5b16;
-  }
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 65px;
+  height: 3px;
+  background: #ed5b16;
+}
 
-  /*-------- GRID------- */
-  .grid{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 25px;
-  }
+/*-------- GRID------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* CATEGORY CARD NAME AT BOTTOM LEFT  */
+.grid .card {
+  background: white;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  position: relative;
+}
+
+.grid .card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  display: block;
+}
+/* CATEGORY NAME */
+
+.grid .card h3 {
+    background: white;
+    color: #111;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 8px 5px;
+    margin: 0;
+    text-align: left;
+}
+
+ /*------ MEAL CARDS------ */
+ .card-body {
+    padding: 10px;
+    background: white;
+}
+
+.cate-name {
+    font-size: 14px;
+    color: #222;
+    margin: 0;
+}
+
