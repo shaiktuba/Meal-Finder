@@ -247,3 +247,81 @@ main {
     margin: 0;
 }
 
+ /*-------- CATEGORY INFORMATION-------- */
+ .category-info {
+    background: white;
+    border: 1px solid #ed5b16;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+.category-info h2 {
+    color: #ed5b16;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+.category-info p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+  /*--------- NO RESULT-------- */
+  .no-result {
+    color: #ed5b16;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+ /*--------- BREADCRUMB--------- */
+ .breadcrumb {
+    background: #ed5b16;
+    color: white;
+    padding: 14px 20px;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    color: white;
+}
+
+ /*--------- MEAL DETAILS--------- */
+ .meal-card {
+    background: white;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 70px;
+}
+
+.meal-card-topbar {
+    display: none;
+}
+
+.meal-card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.meal-card-body > img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.meal-info h2 {
+    color: #ed5b16;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.meal-info p {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.meal-info a {
+    color: #555;
+}
+
